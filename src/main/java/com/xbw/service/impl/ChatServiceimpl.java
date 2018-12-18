@@ -39,10 +39,10 @@ public class ChatServiceimpl implements ChatService {
     JSONObject jsonObject = doCommonGetAndPost(url, s);
     log.info("得到的结果：" + jsonObject.toJSONString());
     JSONArray results = (JSONArray)jsonObject.get("results");
-    String[] texts = results.getString(0).split("\"text\":\"");
-    String re = texts[1];
-    int i = re.indexOf("\"}");
-    String substring = re.substring(0, i);
+    String string = results.getString(0);
+    JSONObject jsonObject1 = JSONObject.parseObject(string);
+    String last3 = (String) jsonObject1.getString("values");
+    String substring = (String)JSONObject.parseObject(last3).get("text");
     substring = substring.replaceAll("图灵","小海");
     substring = substring.replaceAll("tuling","xiaohai");
     return substring;
