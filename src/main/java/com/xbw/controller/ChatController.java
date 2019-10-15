@@ -20,7 +20,8 @@ public class ChatController {
 
   @GetMapping("/ask")
   public ResponseEntity<String> getFileNameById(@RequestParam("askWord") String askWord){
-    String repMsg = chatService.getMsgByTuling(askWord);
+//    String repMsg = chatService.getMsgByTuling(askWord);
+    String repMsg = chatService.getMsgByMoli(askWord);
 //    askWord = askWord.replace("?","!");
 //    askWord = askWord.replace("吗","!");
 //    int random = new Random().nextInt(8);

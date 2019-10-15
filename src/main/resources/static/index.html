@@ -123,7 +123,7 @@
             document.getElementById("msgtext_"+count_msg).scrollIntoView();
             count_msg=count_msg+1;
 
-            $.get("/ask",{askWord:TalkWords.value},function(data){
+            $.get("/chat/ask",{askWord:TalkWords.value},function(data){
                 //ajax应答
                 if(data.indexOf("url:")!=-1){
                     str = '<div id="msgtext_'+count_msg+'" class="atalk"><img style="width: 45px;" src="img/kf.jpg"></img><span><iframe style="height: 550px;width: 380px;"  scrolling="no" src="'+data.substring(4)+'"></iframe></span></div>';
@@ -141,10 +141,10 @@
 <body>
 <div class="talk_con">
   <div class="talk_input">
-    <span >智能聊天机器人--小海</span>
+    <span >智能聊天机器人--阿宾</span>
   </div>
   <div class="talk_show" id="words">
-    <div class="atalk"><img style="width: 45px;" src="img/kf.jpg"></img><span id="asay">您好，很高兴为您服务，请问有什么可以帮助您？</span></div>
+    <div class="atalk"><img style="width: 45px;" src="img/kf.jpg"></img><span id="asay">哟哟哟，被你找到了，说吧</span></div>
   </div>
   <div class="talk_input">
     <input type="text" class="talk_word" id="talkwords">
